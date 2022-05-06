@@ -1,0 +1,16 @@
+@import url("../../App.css");
+
+.judul h5 {
+  color: rgb(17, 8, 8);
+}
+
+
+.edit{
+  color: rgb(255, 255, 255);
+}
+.delete{
+  color: rgb(255, 255, 255);
+}
+.add{
+  color: rgb(255, 255, 255);
+}
