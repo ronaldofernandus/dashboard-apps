@@ -7,10 +7,10 @@ import { AiFillEdit } from "react-icons/ai";
 import { lihatFilm } from "../../axios/filmAxios";
 
 const Film = () => {
-  const [film, setfilm] = useState([]);
+  const [film, setFilm] = useState([]);
 
   useEffect(() => {
-    lihatFilm((result) => console.log(result));
+    lihatFilm((result) => setFilm(result));
   }, []);
 
   return (
