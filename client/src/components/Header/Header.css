@@ -1,0 +1,27 @@
+@import url("../../App.css");
+
+header {
+  height: 500px;
+  width: 1600px;
+
+  padding: 180px 0 165px;
+  margin-top: -150px;
+  margin-left: -290px;
+  background-image: url("../../images/xxi.jpg");
+  background-size: cover;
+}
+
+header h1,
+header p {
+  color: #ffffff;
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+header p {
+  font-size: 22px;
+}
