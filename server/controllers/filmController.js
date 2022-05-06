@@ -69,13 +69,13 @@ class filmController {
       let hapusFilm = await film.destroy({
         where: { id },
       });
-        
+
       let findFilm = await penghubung.findAll({
         where: {
           filmId: id,
         },
       });
-      
+
       if (findFilm.length > 0) {
         let hapusPenghubung = await penghubung.destroy({
           where: {
