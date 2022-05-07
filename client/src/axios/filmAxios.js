@@ -10,7 +10,7 @@ const lihatFilm = async (cb) => {
       url: URL,
     });
     cb(lihatFilm.data);
-    console.log(lihatFilm);
+    // console.log(lihatFilm);
   } catch (e) {
     console.log(e);
   }
@@ -41,4 +41,17 @@ const deleteFilm = async (id) => {
   }
 };
 
-export { lihatFilm, addFilm, deleteFilm };
+const editFilm = async (id, film) => {
+  try {
+    let editFilm = await axios({
+      method: "PUT",
+      url: URL + "/edit/" + id,
+      data: film,
+    });
+    console.log(editFilm.data);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export { lihatFilm, addFilm, deleteFilm, editFilm };

@@ -22,12 +22,12 @@ const DaftarFilm = () => {
   return (
     <>
       <div className="col-12 my-2">
-      <button type="button" className="btn btn-secondary">
-                        <AiFillFileAdd></AiFillFileAdd>
-                        <Link to="/Film/add" className="add">
-                          Add
-                        </Link>
-                      </button>
+        <button type="button" className="btn btn-secondary">
+          <AiFillFileAdd></AiFillFileAdd>
+          <Link to="/Film/add" className="add">
+            Add
+          </Link>
+        </button>
         <table className="table table-bordered">
           <thead>
             <tr>
@@ -53,7 +53,7 @@ const DaftarFilm = () => {
                     <td>
                       <button type="button" className="btn btn-success">
                         <AiFillEdit></AiFillEdit>
-                        <Link to="/Film/" className="edit">
+                        <Link to={`/Film/edit/${id}`} className="edit">
                           Edit
                         </Link>
                       </button>
@@ -63,10 +63,10 @@ const DaftarFilm = () => {
                         className="btn btn-primary"
                       >
                         <MdDeleteForever></MdDeleteForever>
-                        Delete
+                        <Link to="/Film/" className="delete">
+                          Delete
+                        </Link>
                       </button>
-                      
-                      
                     </td>
                   </tr>
                 );
