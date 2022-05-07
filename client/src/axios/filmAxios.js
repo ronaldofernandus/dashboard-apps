@@ -9,11 +9,36 @@ const lihatFilm = async (cb) => {
       method: "GET",
       url: URL,
     });
-    cb(lihatFilm.data)
+    cb(lihatFilm.data);
     console.log(lihatFilm);
   } catch (e) {
     console.log(e);
   }
 };
 
-export { lihatFilm };
+const addFilm = async (film) => {
+  try {
+    let addFilm = await axios({
+      method: "POST",
+      url: URL + "/add",
+      data: film,
+    });
+    console.log(addFilm.data);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const deleteFilm = async (id) => {
+  try {
+    let deleteFilm = await axios({
+      method: "DELETE",
+      url:URL+'/delete/'+id
+    });
+    console.log(deleteFilm.data);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export { lihatFilm, addFilm,deleteFilm };

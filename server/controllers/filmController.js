@@ -22,7 +22,7 @@ class filmController {
         sinopsis,
         kategoriId,
       });
-      res.redirect("/film");
+     res.json(tambahFilm);
     } catch (err) {
       res.json(err);
     }
@@ -84,7 +84,7 @@ class filmController {
         });
       }
 
-      res.redirect("/Film");
+      res.json(hapusFilm)
     } catch (err) {
       res.json(err);
     }
