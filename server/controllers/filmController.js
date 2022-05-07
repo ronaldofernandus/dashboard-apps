@@ -84,7 +84,7 @@ class filmController {
         });
       }
 
-      res.json(hapusFilm)
+      res.redirect("/film");
     } catch (err) {
       res.json(err);
     }

@@ -4,7 +4,7 @@ import "./FilmPage.css";
 import { MdDeleteForever } from "react-icons/md";
 import { AiFillFileAdd } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
-import { lihatFilm,deleteFilm } from "../../axios/filmAxios";
+import { lihatFilm, deleteFilm } from "../../axios/filmAxios";
 import Loading from "../../helpers/Loading";
 
 const DaftarFilm = () => {
@@ -14,13 +14,20 @@ const DaftarFilm = () => {
     lihatFilm((result) => setFilm(result));
   }, []);
 
-  const deleteButton=(id)=>{
-    deleteFilm(id)
-  }
+  const deleteButton = (id) => {
+    deleteFilm(id);
+    lihatFilm((result) => setFilm(result));
+  };
 
   return (
     <>
       <div className="col-12 my-2">
+      <button type="button" className="btn btn-secondary">
+                        <AiFillFileAdd></AiFillFileAdd>
+                        <Link to="/Film/add" className="add">
+                          Add
+                        </Link>
+                      </button>
         <table className="table table-bordered">
           <thead>
             <tr>
@@ -34,7 +41,7 @@ const DaftarFilm = () => {
           <tbody>
             {film.length > 0 ? (
               film.map((filmm, index) => {
-                const { image, namaFilm, sinopsis, kategoriId } = filmm;
+                const { id, image, namaFilm, sinopsis, kategoriId } = filmm;
                 return (
                   <tr key={index}>
                     <td>{index + 1}</td>
@@ -50,16 +57,16 @@ const DaftarFilm = () => {
                           Edit
                         </Link>
                       </button>
-                      <button onClick={()=>deleteButton()} type="button" className="btn btn-primary">
+                      <button
+                        onClick={() => deleteButton(+id)}
+                        type="button"
+                        className="btn btn-primary"
+                      >
                         <MdDeleteForever></MdDeleteForever>
                         Delete
                       </button>
-                      <button type="button" className="btn btn-secondary">
-                        <AiFillFileAdd></AiFillFileAdd>
-                        <Link to="/Film/add" className="add">
-                          Add
-                        </Link>
-                      </button>
+                      
+                      
                     </td>
                   </tr>
                 );

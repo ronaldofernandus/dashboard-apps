@@ -33,12 +33,12 @@ const deleteFilm = async (id) => {
   try {
     let deleteFilm = await axios({
       method: "DELETE",
-      url:URL+'/delete/'+id
+      url: URL + "/delete/" + id,
     });
-    console.log(deleteFilm.data);
+    console.log(deleteFilm);
   } catch (e) {
     console.log(e);
   }
 };
 
-export { lihatFilm, addFilm,deleteFilm };
+export { lihatFilm, addFilm, deleteFilm };
