@@ -5,6 +5,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { AiFillFileAdd } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
 import { lihatFilm } from "../../axios/filmAxios";
+import Loading from "../../helpers/Loading";
 
 const Film = () => {
   const [film, setFilm] = useState([]);
@@ -14,20 +15,20 @@ const Film = () => {
   }, []);
 
   return (
-    <div class="row">
-      <div class="judul col-12 text-center">
+    <div className="row">
+      <div className="judul col-12 text-center">
         <h5>Daftar Film</h5>
         <p>Berikut adalah film yang sedang dan akan tayang</p>
       </div>
-      <div class="col-12 my-2">
-        <table class="table table-bordered">
+      <div className="col-12 my-2">
+        <table className="table table-bordered">
           <thead>
             <tr>
               <th>No</th>
               <th>Poster</th>
               <th>Nama Film</th>
               <th>Sinopsis</th>
-              <th>Action</th>
+              <th width="300px">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -38,24 +39,24 @@ const Film = () => {
                   <tr key={index}>
                     <td>{index + 1}</td>
                     <td>
-                      <img src={image} class="img-fluid" alt=""></img>
+                      <img src={image} className="img-fluid" alt=""></img>
                     </td>
                     <td>{namaFilm}</td>
                     <td>{sinopsis}</td>
                     <td>
-                      <button type="button" class="btn btn-success">
+                      <button type="button" className="btn btn-success">
                         <AiFillEdit></AiFillEdit>
                         <Link to="/Film/" className="edit">
                           Edit
                         </Link>
                       </button>
-                      <button type="button" class="btn btn-primary">
+                      <button type="button" className="btn btn-primary">
                         <MdDeleteForever></MdDeleteForever>
                         <Link to="" className="delete">
                           Delete
                         </Link>
                       </button>
-                      <button type="button" class="btn btn-secondary">
+                      <button type="button" className="btn btn-secondary">
                         <AiFillFileAdd></AiFillFileAdd>
                         <Link to="" className="add">
                           Add
@@ -65,9 +66,9 @@ const Film = () => {
                   </tr>
                 );
               })
-            ) : (
-              <p>Loading</p>
-            )}
+            ) : 
+              <Loading></Loading>
+            }
           </tbody>
         </table>
       </div>

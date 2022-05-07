@@ -5,36 +5,36 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav class="row navbar navbar-expand-lg navbar-light bg-white">
-      <Link to="" class="navbar-brand">
+    <nav className="row navbar navbar-expand-lg navbar-light bg-white">
+      <Link to="" className="navbar-brand">
         <img src={cinema}></img>
       </Link>
-      <div class="collapse navbar-collapse" id="navigasi">
-        <ul class="navbar-nav ml-auto mr-3">
-          <li class="nav-item mx-md-2">
-            <Link to="/film" class="nav-link active">
+      <div className="collapse navbar-collapse" id="navigasi">
+        <ul className="navbar-nav ml-auto mr-3">
+          <li className="nav-item mx-md-2">
+            <Link to="/film" className="nav-link active">
               Film
             </Link>
           </li>
-          <li class="nav-item mx-md-2">
-            <Link to="/jadwal" class="nav-link">
+          <li className="nav-item mx-md-2">
+            <Link to="/jadwal" className="nav-link">
               Jadwal
             </Link>
           </li>
 
-          <li class="nav-item mx-md-2">
-            <Link to="/kategori" class="nav-link">
+          <li className="nav-item mx-md-2">
+            <Link to="/kategori" className="nav-link">
               Kategori
             </Link>
           </li>
-          <li class="nav-item mx-md-2">
-            <Link to="/penghubung/add" class="nav-link">
+          <li className="nav-item mx-md-2">
+            <Link to="/penghubung/add" className="nav-link">
               Penghubung
             </Link>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0 d-none d-md-block">
-          <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px4">
+        <form className="form-inline my-2 my-lg-0 d-none d-md-block">
+          <button className="btn btn-login btn-navbar-right my-2 my-sm-0 px4">
             Masuk
           </button>
         </form>

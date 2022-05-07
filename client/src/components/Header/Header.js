@@ -3,7 +3,7 @@ import './Header.css'
 
 const Header = () => {
   return (
-    <header class="text-center ">
+    <header className="text-center ">
         <h1> Selamat Datang
         <br/>   
         Di Website Kami

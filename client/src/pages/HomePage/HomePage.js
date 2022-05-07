@@ -8,10 +8,10 @@ import cinepolis from "../../images/cinepolis.jpg";
 const HomePage = () => {
   return (
     <main>
-      <section class="section-popular">
-        <div class="container">
-          <div class="row">
-            <div class="col text-center section-popular-heading">
+      <section className="section-popular">
+        <div className="container">
+          <div className="row">
+            <div className="col text-center section-popular-heading">
               <h2>Film Populer</h2>
               <p>Berikut daftar film yang sedang populer</p>
             </div>
