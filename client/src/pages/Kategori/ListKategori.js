@@ -7,7 +7,7 @@ const ListKategori = () => {
       <div className="col-12 text-center">
         <h5>Kategori Page</h5>
         <p>Berisi Halaman Daftar Kategori</p>
-        <Link href="/kategori/add">Tambah Kategori</Link>
+        <Link to="/kategori/add">Tambah Kategori</Link>
       </div>
       <div className="col-12 my-2">
         <table className="table table-bordered">
@@ -23,10 +23,8 @@ const ListKategori = () => {
               <td></td>
               <td></td>
               <td>
-                <Link href="/kategori/edit/<%= getKategori.id %>">Edit</Link>
-                <Link href="/kategori/delete/<%= getKategori.id %>">
-                  Delete
-                </Link>
+                <Link to="">Edit</Link>
+                <Link to="">Delete</Link>
               </td>
             </tr>
           </tbody>

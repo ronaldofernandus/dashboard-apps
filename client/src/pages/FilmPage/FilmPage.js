@@ -1,5 +1,5 @@
 import React from "react";
-import {Outlet} from 'react-router-dom'
+import { Outlet } from "react-router-dom";
 
 import "./FilmPage.css";
 
@@ -12,7 +12,6 @@ const Film = () => {
       </div>
       <Outlet></Outlet>
     </div>
-    
   );
 };
 

@@ -6,7 +6,7 @@ class kategoriController {
       let getKategoris = await kategori.findAll({
         order: [["id", "Asc"]],
       });
-      res.render("Kategori/kategori.ejs", { getKategoris });
+     res.json(getKategoris)
     } catch (err) {
       res.json(err);
     }
