@@ -16,9 +16,7 @@ const EditPage = () => {
   useEffect(() => {
     const { id } = params;
     lihatFilm(
-      (+id,
-      (result) => {
-        setInput({
+      (+id,(result) => {setInput({
           image: result[0].image,
           namaFilm: result[0].namaFilm,
           sinopsis: result[0].sinopsis,
@@ -30,7 +28,7 @@ const EditPage = () => {
 
   const submitHandler = () => {
     navigation("/film");
-    editFilm(+params.id,input);
+    editFilm(+params.id, input);
   };
 
   return (

@@ -8,7 +8,8 @@ import EditFilm from "../../pages/FilmPage/EditFilm";
 
 import Kategori from "../../pages/Kategori/Kategori";
 import ListKategori from "../../pages/Kategori/ListKategori";
-
+import AddKategori from "../../pages/Kategori/AddKategori";
+import EditKategori from "../../pages/Kategori/EditKategori";
 const Content = () => {
   return (
     <div className="container">
@@ -23,6 +24,10 @@ const Content = () => {
         </Route>
         <Route path="kategori" element={<Kategori></Kategori>}>
           <Route path="" element={<ListKategori></ListKategori>}></Route>
+          <Route path="add" element={<AddKategori></AddKategori>}></Route>
+          <Route path="edit">
+            <Route path=":id" element={<EditKategori></EditKategori>}></Route>
+          </Route>
         </Route>
       </Routes>
     </div>

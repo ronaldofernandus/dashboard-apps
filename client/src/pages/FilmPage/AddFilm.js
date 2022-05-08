@@ -32,7 +32,7 @@ const AddPage = () => {
             className="form-control"
             id="customFile"
             name="image"
-          />
+          />  
         </div>
         <div className="mb-3">
           <label for="film" className="form-label">
