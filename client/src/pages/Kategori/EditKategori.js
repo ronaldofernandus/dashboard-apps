@@ -3,7 +3,7 @@ import { editKategori, lihatKategori } from "../../axios/kategoriAxios";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditKategori = () => {
-  const [input, setKategori] = useState({
+  const [kategori, setKategori] = useState({
     namaKategori: "",
   });
   const navigation = useNavigate();
@@ -21,7 +21,7 @@ const EditKategori = () => {
   }, []);
 
   const editHandler = () => {
-    editKategori(+params.id, input);
+    editKategori(+params.id, kategori);
     navigation("/kategori");
   };
 
@@ -37,9 +37,9 @@ const EditKategori = () => {
             Kategori
           </label>
           <input
-            value={input.namaKategori}
+            value={kategori.namaKategori}
             onChange={(e) =>
-              setKategori({ ...input, namaKategori: e.target.value })
+              setKategori({ ...kategori, namaKategori: e.target.value })
             }
             type="text"
             className="form-control"

@@ -4,13 +4,13 @@ import { addKategori } from "../../axios/kategoriAxios";
 import { useNavigate } from "react-router-dom";
 
 const AddKategori = () => {
-  const [input, setKategori] = useState({
+  const [kategori, setKategori] = useState({
     namaKategori: "",
   });
   const navigation = useNavigate();
 
   const addHandler = () => {
-    addKategori(input);
+    addKategori(kategori);
     navigation("/kategori");
   };
 
@@ -27,7 +27,7 @@ const AddKategori = () => {
           </label>
           <input
             onChange={(e) =>
-              setKategori({ ...input, namaKategori: e.target.value })
+              setKategori({ ...kategori, namaKategori: e.target.value })
             }
             type="text"
             className="form-control"

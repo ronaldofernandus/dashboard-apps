@@ -13,8 +13,11 @@ import EditKategori from "../../pages/Kategori/EditKategori";
 
 import JadwalPage from "../../pages/Jadwal/JadwalPage";
 import DaftarJadwal from "../../pages/Jadwal/DaftarJadwal";
-import AddJadwal from '../../pages/Jadwal/AddJadwal'
-import EditJadwal from "../../pages/Jadwal/EditJadwal"
+import AddJadwal from "../../pages/Jadwal/AddJadwal";
+import EditJadwal from "../../pages/Jadwal/EditJadwal";
+
+import AddPenghubung from "../../pages/Penghubung/AddPenghubung";
+
 const Content = () => {
   return (
     <div className="container">
@@ -40,6 +43,9 @@ const Content = () => {
           <Route path="edit">
             <Route path=":id" element={<EditJadwal></EditJadwal>}></Route>
           </Route>
+        </Route>
+        <Route path="penghubung">
+          <Route path="add" element={<AddPenghubung></AddPenghubung>}></Route>
         </Route>
       </Routes>
     </div>
