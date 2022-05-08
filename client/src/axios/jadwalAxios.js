@@ -39,4 +39,17 @@ const deleteJadwal = async (id) => {
   }
 };
 
-export { lihatJadwal, addJadwal, deleteJadwal };
+const editJadwal = async (id, jadwal) => {
+  try {
+    let editJadwal = await axios({
+      method: "PUT",
+      url: URL + "/edit/" + id,
+      data: jadwal,
+    });
+    console.log(editJadwal)
+  } catch (e) {
+    console.log(e)
+  }
+};
+
+export { lihatJadwal, addJadwal, deleteJadwal,editJadwal };

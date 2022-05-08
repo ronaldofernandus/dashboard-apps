@@ -14,6 +14,7 @@ import EditKategori from "../../pages/Kategori/EditKategori";
 import JadwalPage from "../../pages/Jadwal/JadwalPage";
 import DaftarJadwal from "../../pages/Jadwal/DaftarJadwal";
 import AddJadwal from '../../pages/Jadwal/AddJadwal'
+import EditJadwal from "../../pages/Jadwal/EditJadwal"
 const Content = () => {
   return (
     <div className="container">
@@ -36,6 +37,9 @@ const Content = () => {
         <Route path="jadwal" element={<JadwalPage></JadwalPage>}>
           <Route path="" element={<DaftarJadwal></DaftarJadwal>}></Route>
           <Route path="add" element={<AddJadwal></AddJadwal>}></Route>
+          <Route path="edit">
+            <Route path=":id" element={<EditJadwal></EditJadwal>}></Route>
+          </Route>
         </Route>
       </Routes>
     </div>
