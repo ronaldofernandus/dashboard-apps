@@ -13,13 +13,14 @@ const EditKategori = () => {
   useEffect(() => {
     const { id } = params;
 
-    lihatKategori(+id, (result) => {setKategori({
-        namaKategori: result.namaKategori,
+    lihatKategori(+id, (result) => {
+      setKategori({
+        namaKategori: result[0].namaKategori,
       });
     });
   }, []);
 
-  const editHandler = (id) => {
+  const editHandler = () => {
     editKategori(+params.id, input);
     navigation("/kategori");
   };

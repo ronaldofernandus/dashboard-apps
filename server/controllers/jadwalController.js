@@ -7,7 +7,7 @@ class jadwalController {
         include: [film],
         order: [["id", "Asc"]],
       });
-      res.render("Jadwal/jadwal.ejs", { tempJadwals });
+      res.json(tempJadwals);
     } catch (err) {
       res.json(err);
     }

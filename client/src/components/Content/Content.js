@@ -10,6 +10,10 @@ import Kategori from "../../pages/Kategori/Kategori";
 import ListKategori from "../../pages/Kategori/ListKategori";
 import AddKategori from "../../pages/Kategori/AddKategori";
 import EditKategori from "../../pages/Kategori/EditKategori";
+
+import JadwalPage from "../../pages/Jadwal/JadwalPage";
+import DaftarJadwal from "../../pages/Jadwal/DaftarJadwal";
+import AddJadwal from '../../pages/Jadwal/AddJadwal'
 const Content = () => {
   return (
     <div className="container">
@@ -28,6 +32,10 @@ const Content = () => {
           <Route path="edit">
             <Route path=":id" element={<EditKategori></EditKategori>}></Route>
           </Route>
+        </Route>
+        <Route path="jadwal" element={<JadwalPage></JadwalPage>}>
+          <Route path="" element={<DaftarJadwal></DaftarJadwal>}></Route>
+          <Route path="add" element={<AddJadwal></AddJadwal>}></Route>
         </Route>
       </Routes>
     </div>
