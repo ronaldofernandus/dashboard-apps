@@ -19,7 +19,7 @@ class detailController {
         },
       });
 
-      res.render("detail.ejs", { tempPenghubung });
+      res.json(tempPenghubung)
     } catch (err) {
       res.json(err);
     }

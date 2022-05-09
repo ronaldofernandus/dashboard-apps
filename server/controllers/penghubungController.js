@@ -29,12 +29,14 @@ class penghubungController {
         filmId,
         kategoriId,
       });
-
       let createJadwal = await jadwal.create({
         hariTayang,
         jamTayang,
         filmId,
       });
+
+
+     
 
       res.redirect("/");
     } catch (err) {
@@ -47,7 +49,11 @@ class penghubungController {
       let jadwalData = await jadwal.findAll({});
       let dataFilm = await film.findAll({});
       let dataKategories = await kategori.findAll({});
-      res.render("tambahPenghubung.ejs", { jadwalData,dataFilm,dataKategories });
+      res.render("tambahPenghubung.ejs", {
+        jadwalData,
+        dataFilm,
+        dataKategories,
+      });
     } catch (err) {
       res.json(err);
     }

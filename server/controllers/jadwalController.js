@@ -1,10 +1,17 @@
 const { film, jadwal } = require("../models");
 
+const { Op } = require("sequelize");
+
 class jadwalController {
   static async lihatJadwal(req, res) {
     try {
       let tempJadwals = await jadwal.findAll({
-        include: [film],
+        where: {
+          filmId: {
+            [Op.ne]: null,
+          },
+        },
+
         order: [["id", "Asc"]],
       });
       res.json(tempJadwals);
@@ -49,7 +56,7 @@ class jadwalController {
           where: { filmId },
         }
       );
-     res.redirect('/Jadwal')
+      res.redirect("/Jadwal");
     } catch (err) {
       res.json(err);
     }
@@ -70,7 +77,7 @@ class jadwalController {
         where: { id },
       });
 
-     res.redirect('/Jadwal')
+      res.redirect("/Jadwal");
     } catch (err) {
       res.json(err);
     }
