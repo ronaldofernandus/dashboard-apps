@@ -9,7 +9,7 @@ const lihatFilm = async (cb) => {
       method: "GET",
       url: URL,
     });
-    cb(lihatFilm.data);
+    cb  (lihatFilm.data);
     // console.log(lihatFilm);
   } catch (e) {
     console.log(e);

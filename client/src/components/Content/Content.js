@@ -17,6 +17,7 @@ import AddJadwal from "../../pages/Jadwal/AddJadwal";
 import EditJadwal from "../../pages/Jadwal/EditJadwal";
 
 import AddPenghubung from "../../pages/Penghubung/AddPenghubung";
+import DetailPage from "../../pages/DetailPage/DetailPage";
 
 const Content = () => {
   return (
@@ -47,6 +48,7 @@ const Content = () => {
         <Route path="penghubung">
           <Route path="add" element={<AddPenghubung></AddPenghubung>}></Route>
         </Route>
+        <Route path="" element={<DetailPage></DetailPage>}></Route>
       </Routes>
     </div>
   );
