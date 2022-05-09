@@ -1,4 +1,5 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const URL = "http://localhost:4000/kategori";
 
@@ -20,7 +21,8 @@ const addKategori = async (kategori) => {
       url: URL + "/add/",
       data: kategori,
     });
-    console.log(addKategori.data);
+
+    Swal.fire("Add Kategori", "Kategori berhasil di tambah", "success");
   } catch (e) {
     console.log(e);
   }
@@ -33,6 +35,11 @@ const editKategori = async (id, kategori) => {
       url: URL + "/edit/" + id,
       data: kategori,
     });
+    Swal.fire(
+      "Edit Kategori " + id,
+      "Kategori " + id + " has been updated",
+      "success"
+    );
     console.log(editKategori.data);
   } catch (e) {
     console.log(e);
@@ -41,9 +48,23 @@ const editKategori = async (id, kategori) => {
 
 const deleteKategori = async (id) => {
   try {
-    let deleteKategori = await axios({
-      method: "DELETE",
-      url: URL + "/delete/" + id,
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        let result = await axios({
+          method: "DELETE",
+          url: URL + "/delete/" + id,
+        });
+
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
     });
     console.log(deleteKategori);
   } catch (e) {

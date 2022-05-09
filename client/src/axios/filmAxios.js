@@ -23,7 +23,7 @@ const addFilm = async (film) => {
       url: URL + "/add",
       data: film,
     });
-    console.log(addFilm.data);
+    Swal.fire("Add Film", "Film berhasil di tambah", "success");
   } catch (e) {
     console.log(e);
   }
@@ -31,10 +31,28 @@ const addFilm = async (film) => {
 
 const deleteFilm = async (id) => {
   try {
-    let deleteFilm = await axios({
-      method: "DELETE",
-      url: URL + "/delete/" + id,
-    });
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+  }).then(async (result) => {
+      if (result.isConfirmed) {
+          let result = await axios({
+              method: "DELETE",
+              url: URL + '/delete/' + id
+          })
+
+          Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+          )
+      }
+  })
     console.log(deleteFilm);
   } catch (e) {
     console.log(e);
@@ -48,7 +66,11 @@ const editFilm = async (id, film) => {
       url: URL + "/edit/" + id,
       data: film,
     });
-    console.log(editFilm.data);
+    Swal.fire(
+      'Edit Film ' + id,
+      'Film ' + id + ' has been updated',
+      'success'
+  )
   } catch (e) {
     console.log(e);
   }
