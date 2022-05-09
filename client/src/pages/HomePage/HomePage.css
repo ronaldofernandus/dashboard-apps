@@ -35,16 +35,7 @@
   margin-top: -160px;
   
 }
-.section-popular-content .section-popular-film .card-film2 {
-  min-height: 380px;
-  background-color: #ddd;
-  color: #fff;
-  padding: 30px;
-  background-size: cover;
-  margin-bottom: 20px;
-  margin-top: -160px;
-  background-image: url("../../images/spiderman.png");
-}
+
 .section-popular-content .section-popular-film .judul-film {
   font-size: 18px;
   color: rgb(125, 32, 32);

@@ -31,7 +31,7 @@ const HomePage = () => {
                 <div className="col-sm-6 col-md-4 col-lg-3">
                   <div
                     className="card-film text-center d-flex-column"
-                    src={image}
+                    style={{ backgroundImage: `url('${image}')` }}
                   >
                     <div className="judul-film">{namaFilm} </div>
                     <div className="film-button mt-auto">
