@@ -9,6 +9,8 @@ const DetailPage = () => {
   const [jadwal, setJadwal] = useState([]);
   const [kategori, setKategori] = useState([]);
 
+  const [detail, setDetail] = useState([]);
+
   useEffect(() => {
     lihatFilm((result) => setFilm(result));
   }, []);
@@ -19,6 +21,9 @@ const DetailPage = () => {
 
   useEffect(() => {
     lihatKategori((result) => setKategori(result));
+  }, []);
+  useEffect(() => {
+    lihatDetails((result) => setDetail(result));
   }, []);
 
   return (

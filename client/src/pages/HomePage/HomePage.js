@@ -26,14 +26,14 @@ const HomePage = () => {
         <div className="container">
           <div className="section-popular-film row justify-content-center">
             {film.map((filmm) => {
-              const { id, namaFilm,image } = filmm;
+              const { id, namaFilm, image } = filmm;
               return (
                 <div className="col-sm-6 col-md-4 col-lg-3">
                   <div
                     className="card-film text-center d-flex-column"
                     src={image}
                   >
-                    <div className="judul-film">{filmm.namaFilm} </div>
+                    <div className="judul-film">{namaFilm} </div>
                     <div className="film-button mt-auto">
                       <Link
                         to={`/detail/${id}`}

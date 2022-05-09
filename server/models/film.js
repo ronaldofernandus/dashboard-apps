@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class film extends Model {
     /**
@@ -10,19 +8,26 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-     film.hasMany(models.jadwal)
-     film.belongsToMany(models.kategori,{through:models.penghubung})
-     
+      film.hasMany(models.jadwal);
+      film.belongsToMany(models.kategori, { through: models.penghubung });
     }
   }
-  film.init({
-    image: DataTypes.STRING,
-    namaFilm: DataTypes.STRING,
-    sinopsis: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'film',
-  });
+  film.init(
+    {
+      image: DataTypes.STRING,
+      namaFilm: DataTypes.STRING,
+      sinopsis: DataTypes.STRING,
+    },
+    {
+      hooks: {
+        beforeCreate: function (film, option) {
+          film.image = "https://via.placeholder.com/150";
+        },
+      },
+      sequelize,
+      modelName: "film",
+    }
+  );
   return film;
 };
-// 
+//

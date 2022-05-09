@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:4000/detail/:id";
+const URL = "http://localhost:4000/detail/";
 
 const lihatDetails = async (id) => {
   try {
