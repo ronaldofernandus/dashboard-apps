@@ -23,7 +23,9 @@ const Content = () => {
   return (
     <div className="container">
       <Routes>
-        <Route path="" element={<HomePage></HomePage>}></Route>
+        <Route path="" element={<HomePage></HomePage>}>
+          <Route path="/detail/" element={<DetailPage></DetailPage>}></Route>
+        </Route>
         <Route path="film" element={<FilmPage></FilmPage>}>
           <Route path="" element={<DaftarFilm></DaftarFilm>}></Route>
           <Route path="add" element={<AddFilm></AddFilm>}></Route>
@@ -48,7 +50,6 @@ const Content = () => {
         <Route path="penghubung">
           <Route path="add" element={<AddPenghubung></AddPenghubung>}></Route>
         </Route>
-        <Route path="" element={<DetailPage></DetailPage>}></Route>
       </Routes>
     </div>
   );

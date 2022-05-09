@@ -56,6 +56,7 @@ const AddPage = () => {
             name="sinopsis"
           />
         </div>
+        
         <button
           onClick={() => submitHandler()}
           type="submit"
