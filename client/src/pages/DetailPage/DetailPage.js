@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { lihatFilm } from "../../axios/filmAxios";
-import { lihatKategori } from "../../axios/kategoriAxios";
-import { lihatJadwal } from "../../axios/jadwalAxios";
-import { lihatDetails } from "../../axios/detailAxios";
+import { useParams } from "react-router-dom";
+
+import { lihatPenghubung } from "../../axios/penghubungAxios";
 
 const DetailPage = () => {
-  const [film, setFilm] = useState([]);
-  const [jadwal, setJadwal] = useState([]);
-  const [kategori, setKategori] = useState([]);
+  const [penghubung, setPenghubung] = useState({});
 
-  const [detail, setDetail] = useState([]);
+  const params = useParams();
 
   useEffect(() => {
-    lihatFilm((result) => setFilm(result));
-  }, []);
+    const { id } = params;
+    lihatPenghubung(
+      (id,
+      (result) => {
+        setPenghubung({
+          image: result[0].image,
+          namaFilm: result[0].namaFilm,
+          sinopsis: result[0].sinopsis,
+          kategoriId: result[0].kategoriId,
+          hariTayang: result[0].hariTayang,
+          jamTayang: result[0].jamTayang,
 
-  useEffect(() => {
-    lihatJadwal((result) => setJadwal(result));
-  }, []);
-
-  useEffect(() => {
-    lihatKategori((result) => setKategori(result));
-  }, []);
-  useEffect(() => {
-    lihatDetails((result) => setDetail(result));
+          filmId: result[0].filmId,
+        });
+      })
+    );
   }, []);
 
   return (
@@ -34,28 +35,32 @@ const DetailPage = () => {
           <div className="row">
             <div className="col-lg-8 pl-lg-0">
               <div className="card card-details">
-                <h1>{film.namaFilm}</h1>
+                <h1>{penghubung.namaFilm}</h1>
                 <div className="gallery">
                   <div className="xzoom-container">
-                    <img src={film.image} class="xzoom" id="xzoom-default" />
+                    <img
+                      src={penghubung.image}
+                      class="xzoom"
+                      id="xzoom-default"
+                    />
                   </div>
                 </div>
                 <h2>Sinopsis</h2>
-                <p>{film.sinopsis}</p>
+                <p>{penghubung.sinopsis}</p>
                 <div className="features row">
                   <div className="col-md-4 border-left">
                     <div className="description">
                       <h3>Kategori</h3>
-                      <p>{kategori.namaKategori}</p>
+                      <p>{penghubung.namaKategori}</p>
                     </div>
                   </div>
                   <div className="col-md-4 border-left">
                     <div className="description">
-                      {jadwal.map((jadwalResult) => {
+                      {penghubung.map((penghubungResult) => {
                         return (
                           <div>
                             <h3>Hari Tayang</h3>{" "}
-                            <p>{jadwalResult.hariTayang}</p>
+                            <p>{penghubungResult.hariTayang}</p>
                           </div>
                         );
                       })}
@@ -63,10 +68,11 @@ const DetailPage = () => {
                   </div>
                   <div className="col-md-4 border-left">
                     <div className="description">
-                      {jadwal.map((jadwalResult) => {
+                      {penghubung.map((penghubungResult) => {
                         return (
                           <div>
-                            <h3>Jam Tayang</h3> <p>{jadwalResult.jamTayang}</p>
+                            <h3>Jam Tayang</h3>{" "}
+                            <p>{penghubungResult.jamTayang}</p>
                           </div>
                         );
                       })}

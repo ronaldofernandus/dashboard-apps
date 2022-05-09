@@ -36,7 +36,7 @@ const HomePage = () => {
                     <div className="judul-film">{namaFilm} </div>
                     <div className="film-button mt-auto">
                       <Link
-                        to={`/detail/${id}`}
+                        to={`/detail/${+id}`}
                         className="btn btn-film-detail px-4"
                       >
                         View Details

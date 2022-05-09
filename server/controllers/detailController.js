@@ -19,7 +19,7 @@ class detailController {
         },
       });
 
-      res.json(tempPenghubung)
+      res.json(tempPenghubung);
     } catch (err) {
       res.json(err);
     }

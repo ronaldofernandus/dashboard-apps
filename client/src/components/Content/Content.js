@@ -24,7 +24,7 @@ const Content = () => {
     <div className="container">
       <Routes>
         <Route path="" element={<HomePage></HomePage>}>
-          <Route path="detail/:id" element={<DetailPage></DetailPage>}>
+          <Route path="detail/" element={<DetailPage></DetailPage>}>
             {/* <Route path=":id" element={<DetailPage></DetailPage>}></Route> */}
           </Route>
         </Route>
